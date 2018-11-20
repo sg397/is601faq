@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class QuestionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -46,7 +51,7 @@ class QuestionController extends Controller
      */
     public function show(Question $question)
     {
-        //
+       return view('question')->with('question', $question);
     }
 
     /**
