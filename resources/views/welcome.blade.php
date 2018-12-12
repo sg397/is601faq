@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    FAQ Laravel
+                    Final Laravel Project
                 </div>
 
                 <div class="links">
