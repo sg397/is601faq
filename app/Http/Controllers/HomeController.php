@@ -17,7 +17,7 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
+    /**c
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response

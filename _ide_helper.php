@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.7.13 on 2018-11-27 04:03:10.
+ * Generated for Laravel 5.7.13 on 2018-12-12 20:36:23.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -13682,6 +13682,328 @@ namespace Illuminate\Support\Facades {
  
 }
 
+namespace ConsoleTVs\Charts\Facades { 
+
+    /**
+     * This is the charts facade class.
+     *
+     * @author Erik Campobadal <soc@erik.cat>
+     */ 
+    class Charts {
+        
+        /**
+         * Return a new chart instance.
+         *
+         * @param string $type
+         * @param string $library
+         * @return \ConsoleTVs\Charts\Chart 
+         * @static 
+         */ 
+        public static function create($type = null, $library = null)
+        {
+            return \ConsoleTVs\Charts\Builder::create($type, $library);
+        }
+        
+        /**
+         * Return a new realtime chart instance.
+         *
+         * @param string $url
+         * @param int $interval
+         * @param string $type
+         * @param string $library
+         * @return \ConsoleTVs\Charts\Realtime 
+         * @static 
+         */ 
+        public static function realtime($url, $interval, $type = null, $library = null)
+        {
+            return \ConsoleTVs\Charts\Builder::realtime($url, $interval, $type, $library);
+        }
+        
+        /**
+         * Return a new database chart instance.
+         *
+         * @param \Illuminate\Support\Collection $data
+         * @param string $type
+         * @param string $library
+         * @return \ConsoleTVs\Charts\Database 
+         * @static 
+         */ 
+        public static function database($data, $type = null, $library = null)
+        {
+            return \ConsoleTVs\Charts\Builder::database($data, $type, $library);
+        }
+        
+        /**
+         * Return a new math chart instance.
+         *
+         * @param string $function
+         * @param array $interval
+         * @param int $amplitude
+         * @param string $type
+         * @param string $library
+         * @return \ConsoleTVs\Charts\Math 
+         * @static 
+         */ 
+        public static function math($function, $interval, $amplitude, $type = null, $library = null)
+        {
+            return \ConsoleTVs\Charts\Builder::math($function, $interval, $amplitude, $type, $library);
+        }
+        
+        /**
+         * Return a new multi chart instance.
+         *
+         * @param string $type
+         * @param string $library
+         * @return \ConsoleTVs\Charts\Multi 
+         * @static 
+         */ 
+        public static function multi($type = null, $library = null)
+        {
+            return \ConsoleTVs\Charts\Builder::multi($type, $library);
+        }
+        
+        /**
+         * Return a new multi database chart instance.
+         *
+         * @param string $type
+         * @param string $library
+         * @return \ConsoleTVs\Charts\MultiDatabase 
+         * @static 
+         */ 
+        public static function multiDatabase($type = null, $library = null)
+        {
+            return \ConsoleTVs\Charts\Builder::multiDatabase($type, $library);
+        }
+        
+        /**
+         * Return all the libraries available.
+         *
+         * @param string $type
+         * @return array 
+         * @static 
+         */ 
+        public static function libraries($type = null)
+        {
+            return \ConsoleTVs\Charts\Builder::libraries($type);
+        }
+        
+        /**
+         * Return all the types available.
+         *
+         * @param string $library
+         * @return array 
+         * @static 
+         */ 
+        public static function types($library = null)
+        {
+            return \ConsoleTVs\Charts\Builder::types($library);
+        }
+        
+        /**
+         * Return the library styles.
+         *
+         * @param array $libraries
+         * @return string 
+         * @static 
+         */ 
+        public static function styles($libraries = array())
+        {
+            return \ConsoleTVs\Charts\Builder::styles($libraries);
+        }
+        
+        /**
+         * Return the library scripts.
+         *
+         * @param array $libraries
+         * @return string 
+         * @static 
+         */ 
+        public static function scripts($libraries = array())
+        {
+            return \ConsoleTVs\Charts\Builder::scripts($libraries);
+        }
+        
+        /**
+         * Return the library styles.
+         *
+         * @param array $libraries
+         * @return string 
+         * @static 
+         */ 
+        public static function assets($libraries = array())
+        {
+            return \ConsoleTVs\Charts\Builder::assets($libraries);
+        }
+         
+    }
+
+    /**
+     * This is the charts facade class.
+     *
+     * @author Erik Campobadal <soc@erik.cat>
+     */ 
+    class Charts {
+        
+        /**
+         * Return a new chart instance.
+         *
+         * @param string $type
+         * @param string $library
+         * @return \ConsoleTVs\Charts\Chart 
+         * @static 
+         */ 
+        public static function create($type = null, $library = null)
+        {
+            return \ConsoleTVs\Charts\Builder::create($type, $library);
+        }
+        
+        /**
+         * Return a new realtime chart instance.
+         *
+         * @param string $url
+         * @param int $interval
+         * @param string $type
+         * @param string $library
+         * @return \ConsoleTVs\Charts\Realtime 
+         * @static 
+         */ 
+        public static function realtime($url, $interval, $type = null, $library = null)
+        {
+            return \ConsoleTVs\Charts\Builder::realtime($url, $interval, $type, $library);
+        }
+        
+        /**
+         * Return a new database chart instance.
+         *
+         * @param \Illuminate\Support\Collection $data
+         * @param string $type
+         * @param string $library
+         * @return \ConsoleTVs\Charts\Database 
+         * @static 
+         */ 
+        public static function database($data, $type = null, $library = null)
+        {
+            return \ConsoleTVs\Charts\Builder::database($data, $type, $library);
+        }
+        
+        /**
+         * Return a new math chart instance.
+         *
+         * @param string $function
+         * @param array $interval
+         * @param int $amplitude
+         * @param string $type
+         * @param string $library
+         * @return \ConsoleTVs\Charts\Math 
+         * @static 
+         */ 
+        public static function math($function, $interval, $amplitude, $type = null, $library = null)
+        {
+            return \ConsoleTVs\Charts\Builder::math($function, $interval, $amplitude, $type, $library);
+        }
+        
+        /**
+         * Return a new multi chart instance.
+         *
+         * @param string $type
+         * @param string $library
+         * @return \ConsoleTVs\Charts\Multi 
+         * @static 
+         */ 
+        public static function multi($type = null, $library = null)
+        {
+            return \ConsoleTVs\Charts\Builder::multi($type, $library);
+        }
+        
+        /**
+         * Return a new multi database chart instance.
+         *
+         * @param string $type
+         * @param string $library
+         * @return \ConsoleTVs\Charts\MultiDatabase 
+         * @static 
+         */ 
+        public static function multiDatabase($type = null, $library = null)
+        {
+            return \ConsoleTVs\Charts\Builder::multiDatabase($type, $library);
+        }
+        
+        /**
+         * Return all the libraries available.
+         *
+         * @param string $type
+         * @return array 
+         * @static 
+         */ 
+        public static function libraries($type = null)
+        {
+            return \ConsoleTVs\Charts\Builder::libraries($type);
+        }
+        
+        /**
+         * Return all the types available.
+         *
+         * @param string $library
+         * @return array 
+         * @static 
+         */ 
+        public static function types($library = null)
+        {
+            return \ConsoleTVs\Charts\Builder::types($library);
+        }
+        
+        /**
+         * Return the library styles.
+         *
+         * @param array $libraries
+         * @return string 
+         * @static 
+         */ 
+        public static function styles($libraries = array())
+        {
+            return \ConsoleTVs\Charts\Builder::styles($libraries);
+        }
+        
+        /**
+         * Return the library scripts.
+         *
+         * @param array $libraries
+         * @return string 
+         * @static 
+         */ 
+        public static function scripts($libraries = array())
+        {
+            return \ConsoleTVs\Charts\Builder::scripts($libraries);
+        }
+        
+        /**
+         * Return the library styles.
+         *
+         * @param array $libraries
+         * @return string 
+         * @static 
+         */ 
+        public static function assets($libraries = array())
+        {
+            return \ConsoleTVs\Charts\Builder::assets($libraries);
+        }
+         
+    }
+ 
+}
+
+namespace Jenssegers\Date { 
+
+    /**
+     * 
+     *
+     */ 
+    class Date {
+         
+    }
+ 
+}
+
 namespace Collective\Html { 
 
     /**
@@ -17169,6 +17491,12 @@ namespace  {
     class Validator extends \Illuminate\Support\Facades\Validator {}
 
     class View extends \Illuminate\Support\Facades\View {}
+
+    class charts extends \ConsoleTVs\Charts\Facades\Charts {}
+
+    class Charts extends \ConsoleTVs\Charts\Facades\Charts {}
+
+    class Date extends \Jenssegers\Date\Date {}
 
     class Form extends \Collective\Html\FormFacade {}
 

@@ -25,12 +25,14 @@
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
 
-
-            @guest
+        @guest
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    Dashboard
                 </a>
             @else
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    Dashboard
+                </a>
                 <a class="navbar-brand" href="{{ route('home') }}">
                     Home
                 </a>
