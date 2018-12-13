@@ -16,8 +16,8 @@ class ChartController extends Controller
         //$users = User::all();
         $users = DB::table('users')
                 ->join('questions', 'questions.user_id', '=', 'users.id')
-                ->join('profiles', 'profiles.user_id', '=', 'users.id')
-                ->select('users.email',   'profiles.fname', 'profiles.lname')
+                //->join('profiles', 'profiles.user_id', '=', 'users.id')
+                ->select('users.email')
                 ->get();
 
          $charts = Charts::database($users, 'bar', 'highcharts')
