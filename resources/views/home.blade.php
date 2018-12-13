@@ -20,6 +20,7 @@
                                             <small class="text-muted">
                                                 Updated: {{ $question->created_at->diffForHumans() }}
                                                 Answers: {{ $question->answers()->count() }}
+                                                Viewed: {{ $question->view_count}}
 
                                             </small>
                                         </div>

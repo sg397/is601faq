@@ -67,6 +67,9 @@ class QuestionController extends Controller
      */
     public function show(Question $question)
     {
+        //update view_count which can be used for Questions chart
+        $question->view_count = $question->view_count+1;
+        $question->save();
        return view('question')->with('question', $question);
     }
 
