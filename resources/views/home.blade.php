@@ -18,9 +18,8 @@
                                     <div class="card mb-3 ">
                                         <div class="card-header">
                                             <small class="text-muted">
-                                                Updated: {{ $question->created_at->diffForHumans() }}
                                                 Answers: {{ $question->answers()->count() }}
-                                                Viewed: {{ $question->view_count}}
+                                                View Count: {{ $question->view_count}}
 
                                             </small>
                                         </div>

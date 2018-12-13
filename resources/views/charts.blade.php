@@ -1,27 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="'container">
-            <div class="col-md-6">
+    <div class="'jumbotron">
+            <div class="col-md-12">
 
                 <div class="panel panel-primary">
                     <div class="panel-body">
-                        {!! $charts->html()!!}
-                    </div>
-                </div>
-            </div>
+                        <div class="row">
 
-            <div class="col-md-6">
+                            <div class="col-md-6">
+                                <div style="border:2px;color:red;align:right">
 
-                <div class="panel panel-primary">
-                    <div class="panel-body">
-                        {!! $charts->html()!!}
+                                {!! $questionCharts->html()!!}
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div style="border:2px;color:red;align:left;">
+                                    {!! $userCharts->html()!!}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
     </div>
 
+
     {!! Charts::styles() !!}
     {!! Charts::scripts() !!}
-    {!! $charts->script() !!}
+
+    {!! $userCharts->script() !!}
+
+    {!! $questionCharts->script() !!}
 @endsection
