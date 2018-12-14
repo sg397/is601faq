@@ -56,7 +56,7 @@ class ChartController extends Controller
         $questionAnswers =  DB::table('answers')
             ->select( 'question_id')
             ->get()->unique('question_id');
-//dd($questionAnswers->count());
+
         $answeredCount = $questionAnswers->count();
       // dd($answeredCount);
 
