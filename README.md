@@ -8,19 +8,17 @@ Git hub link: https://github.com/sg397/is601faq
 
 i. Most Active Users: Based on number of questions created by user
 
-ii. Most viewed Questions: This will have a counter in questions table and increments when ever a user view a question.
-
+ii. Most viewed Questions: How many views a question got from users.
 
 
 <b><u>Userstories:</u></b>
 
-1. Add Dashboard to nav bar that displays active users bar graph. Active users are determined based on number of questions user created. More number of questions will make the top user.
+<u>Userstory#1.</u> As a user, when I go to FAQ website, I want to see a Dashboard page displaying a bar graph of active users of this website. The user is considered more active based on number of questions he/she created.
  
-2. Implement view count for questions to find the popularity of the questions in FAQ. 
+<u>Userstory#2.</u> As a login user, when I go to my home page, I should see a question view count on Question card header.  
 
-3. Display question view count on the question card in home page.
+<u>Userstory#3.</u> As a user, when I go to FAQ website, I want to see a Dashboard page displaying a bar graph of most viewed questions of this website. We can use the view count in userstory#2 can be used to find the popularity of the questions.
 
-4. Display Most viewd questions chart on Dashboard.
+<u>Userstory#4.</u> As a FAQ user, I want to see dashboard page with both Active user graph and Most viewed questions grapf aligned in one row.
 
-5. Add bar graph in dashboard page that displays a questions on x-axis and view count on y-axis
 

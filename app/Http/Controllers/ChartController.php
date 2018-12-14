@@ -36,17 +36,14 @@ class ChartController extends Controller
         $userCharts = Charts::database($users, 'bar', 'highcharts')
             ->title("Active Users Creating FAQs")
             ->elementLabel("No# of Questions Created")
-            ->dimensions(1000, 600)
             ->responsive(false)
             ->groupBy('email');
 
         $questionCharts = Charts::database($questions, 'bar', 'highcharts')
             ->title("Popular Questions Viewed By Users")
             ->elementLabel("Question Views")
-
             ->labels($labels)
             ->values($values)
-            ->dimensions(700, 600)
             ->responsive(false);
 
 
