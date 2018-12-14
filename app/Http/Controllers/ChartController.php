@@ -53,15 +53,17 @@ class ChartController extends Controller
         $questionCount = $questions->count();
         //dd($questionCount);
 
-        $questionAnswers = \App\Answer::all();
+        $questionAnswers =  DB::table('answers')
+            ->select( 'question_id')
+            ->get()->unique('question_id');
+//dd($questionAnswers->count());
         $answeredCount = $questionAnswers->count();
-       //dd($answeredCount);
+      // dd($answeredCount);
 
        $pieChart = Charts::create('donut', 'highcharts')
-            ->title(" Pie-Chart Showing Number of Answered and Unanswered Questions. Total Questions: ".$questionCount)
+            ->title(" Donut-Chart Showing Number of Answered and Unanswered Questions.\<br\> Total Questions: ".$questionCount)
            ->labels(['Answered Questions','Un-Answered Questions'])
            ->values([$answeredCount, $questionCount-$answeredCount])
-           ->dimensions(1000,400)
            ->responsive(false);
 
 
