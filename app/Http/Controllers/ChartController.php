@@ -13,12 +13,20 @@ class ChartController extends Controller
 
     public function index(){
 
-        //$users = User::all();
         $users = DB::table('users')
                 ->join('questions', 'questions.user_id', '=', 'users.id')
-                //->join('profiles', 'profiles.user_id', '=', 'users.id')
                 ->select('users.email')
                 ->get();
+
+
+        $userCharts = Charts::database($users, 'bar', 'highcharts')
+            ->title("Active Users Creating FAQs")
+            ->elementLabel("Questions Created By User")
+            ->yAxisTitle("Number Of Questions")
+            //->xAxisTitle("Users")
+            ->responsive(false)
+            ->groupBy('email');
+
 
         $questions = DB::table('questions')
             ->select( 'questions.id','questions.body', 'questions.view_count')
@@ -33,55 +41,32 @@ class ChartController extends Controller
             $values[$i] = $questions[$i]->view_count;
         }
 
-        $userCharts = Charts::database($users, 'bar', 'highcharts')
-            ->title("Active Users Creating FAQs")
-            ->elementLabel("No# of Questions Created")
-            ->responsive(false)
-            ->groupBy('email');
-
-        $questionCharts = Charts::database($questions, 'bar', 'highcharts')
+        $questionCharts = Charts::database($questions, 'line', 'highcharts')
             ->title("Popular Questions Viewed By Users")
             ->elementLabel("Question Views")
+            ->yAxisTitle("Number Of Views")
             ->labels($labels)
             ->values($values)
             ->responsive(false);
 
+        $questions = \App\Question::all();
+        $questionCount = $questions->count();
+        //dd($questionCount);
 
-/*        $pieCharts = Charts::create('pie', 'highcharts')
-            ->title("PIE CHART Users Creating FAQs")
-            ->elementLabel("No# of Questions Created")
-            ->dimensions(1000, 500)
-            ->responsive(false)
-            ->groupBy('email');
-*/
-        return view('charts', compact('userCharts','questionCharts'));
+        $questionAnswers = \App\Answer::all();
+        $answeredCount = $questionAnswers->count();
+       //dd($answeredCount);
 
-    }
+       $pieChart = Charts::create('donut', 'highcharts')
+            ->title(" Pie-Chart Showing Number of Answered and Unanswered Questions. Total Questions: ".$questionCount)
+           ->labels(['Answered Questions','Un-Answered Questions'])
+           ->values([$answeredCount, $questionCount-$answeredCount])
+           ->dimensions(1000,400)
+           ->responsive(false);
 
-    /*
-      public function index(){
 
-        //$users = User::all();
-        $users = DB::table('users')
-                ->join('questions', 'questions.user_id', '=', 'users.id')
-                //->join('profiles', 'profiles.user_id', '=', 'users.id')
-                ->select('users.email')
-                ->get();
-
-         $charts = Charts::database($users, 'bar', 'highcharts')
-
-            ->title("Active Users Creating FAQs")
-
-            ->elementLabel("No# of Questions Created")
-
-            ->dimensions(1000, 500)
-
-            ->responsive(false)
-            ->groupBy('email');
-
-        return view('charts', compact('charts'));
+        return view('charts', compact('userCharts','questionCharts', 'pieChart'));
 
     }
-     */
 
 }
