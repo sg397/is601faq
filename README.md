@@ -25,7 +25,7 @@ Git hub link: https://github.com/sg397/is601faq
 <p><br><b><u>Test:</u></b> To test, please login to faq application, goto Home, verify the View Count:<int> on top of the question cards. This will be incremented whenever the question View button is clicked. The Dashboard "Popular Questions" graph will be updated with view counts. Hover on the graph will show the details. Note- The graph shows Questions only if they have atleast one view.</p> 
 
 <h4><u>Userstory#4.</u></h4> As a user, I want to see Donut chart showing number of answered and un-answered questions in the website. 
-<p><br><b><u>Test:</u></b> To test, please login to faq application, goto Home, add answers to question that was not answered. The Dashboard "Donut Chart" will be updated with updated. Hover on the chart will show the details. Note- Multiple answers to one question is still considered as question answered.</p> 
+<p><br><b><u>Test:</u></b> To test, please login to faq application, goto Home, add answers to question that was not answered. The Dashboard "Donut Chart" will be updated with new numbers. Hover on the chart will show the details. Note- Multiple answers to one question is still considered as question answered.</p> 
 
 
 
@@ -36,5 +36,5 @@ Charts are implmented using the below commands.
 1. composer require consoletvs/charts
 2. Added config details in config/app.php
 
-consoleTVs\Charts\ChartsServiceProvider::class, ===>providers <br>
-'charts' => ConsoleTVs\Charts\Facades\Charts::class, ===>aliases
+consoleTVs\Charts\ChartsServiceProvider::class,  <br>
+'charts' => ConsoleTVs\Charts\Facades\Charts::class, aliases
